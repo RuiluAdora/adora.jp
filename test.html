@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>計算</title>
+</head>
+<style>
+  body{
+    background-color: #373737;
+    width: 100%;
+    height: 200px;
+  }
+
+  .settings{
+    background-color: #eeeeee;
+    border: 2px solid #FFF;
+    float: left;
+  }
+
+  .home {text-align: center;margin: 2em 0;background: #dcffe3; font-size: 50px;}
+  .home .box-title {font-size: 1.2em;background: #5fff6c;padding: 4px;text-align: center;color: #FFF;font-weight: bold;letter-spacing: 0.05em;}
+  .home p {padding: 15px 20px;margin: 0;}
+
+  input.example {font-size:50pt;height:120;width:100%;}
+  input.tenKey {background-color: #dcffe3;border: 1px solid #5fff6c;font-size:50pt;height:100%;width:100%;}
+  td.td1{font-size:	50pt;height:120;width:30%;}
+
+  .num {
+    background-color: #dcffe3;
+    border: 2px solid #5fff6c;
+    width: 25%;
+    height: 50px;
+    text-align: center;
+    font-size: 45px;
+  }
+
+  .settings {
+    background-color: #dcffe3;
+    border: 1px solid #5fff6c;
+    text-align: center;
+  }
+
+  .setting-num {
+    background-color: #dcffe3;
+    border: 2px solid #5fff6c;
+    width: 100%;
+    height: 20px;
+    text-align: left;
+    font-size: 15px;
+  }
+
+  .setting-text {
+    text-align: left;
+  }
+
+</style>
+
+
+
+<body>
+
+
+  <div class="home">
+  <div class="box-title" id="q">1 + 1 = ?</div>
+  <form id="form" onsubmit="return abc()">
+    <input type="number" id="numb" type="reset" class="num">
+  </form>
+  <div id="answ">A.</div>
+  <div id="info">〇 : 0 ✕ : 0</div>
+</div>
+
+
+<div>
+  <table width="100%">
+    <tr>
+      <td class="td1"> <input type="button" value="1" class="tenKey" onclick="onTenkey('1')"></td>
+      <td class="td1"> <input type="button" value="2" class="tenKey" onclick="onTenkey('2')"></td>
+      <td class="td1"> <input type="button" value="3" class="tenKey" onclick="onTenkey('3')"></td>
+    </tr>
+    <tr>
+      <td class="td1"> <input type="button" value="4" class="tenKey" onclick="onTenkey('4')"></td>
+      <td class="td1"> <input type="button" value="5" class="tenKey" onclick="onTenkey('5')"></td>
+      <td class="td1"> <input type="button" value="6" class="tenKey" onclick="onTenkey('6')"></td>
+    </tr>
+    <tr>
+      <td class="td1"> <input type="button" value="7" class="tenKey" onclick="onTenkey('7')"></td>
+      <td class="td1"> <input type="button" value="8" class="tenKey" onclick="onTenkey('8')"></td>
+      <td class="td1"> <input type="button" value="9" class="tenKey" onclick="onTenkey('9')"></td>
+    </tr>
+    <tr>
+      <td class="td1"> <input type="button" value="RE" class="tenKey" onclick="onTenkey('RE')"></td>
+      <td class="td1"> <input type="button" value="0" class="tenKey" onclick="onTenkey('0')"></td>
+      <td class="td1"> <input type="button" value="入力" class="tenKey" onclick="onTenkey('RET')"></td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="setting">
+
+  <div class="settings">
+    <div class="setting-text">問題数</div>
+    <form action="#">
+      <input type="number" id="setting-qes" class="setting-num">
+    </form>
+  </div>
+
+  <div class="settings">
+    <div class="setting-text">制限時間</div>
+    <form action="#">
+      <input type="number" id="setting-time" class="setting-num">
+    </form>
+  </div>
+
+  <div class="settings">
+    <div class="setting-text">1問あたりの制限時間</div>
+    <form action="#">
+      <input type="number" id="setting-time" class="setting-num">
+    </form>
+  </div>
+
+  <div class="settings">
+    <div>テストボタン</div>
+      <input type="button" value="ボタン" onclick="setting()">
+  </div>
+
+</div>
+
+
+
+
+</body>
+<script>
+
+function abc() {
+    let q = document.getElementById("q").textContent.split(' ');
+    let info = document.getElementById("info").textContent.split(' ');
+    let numb = document.getElementById("numb");
+    let value = numb.value;
+    let ans = Number(q[0]) + Number(q[2]);
+    let X = Math.floor(Math.random() * 9 + 1);
+    let Y = Math.floor(Math.random() * 9 + 1);
+    document.getElementById("q").textContent = `${X} + ${Y} = ?`;
+    numb.value = "";
+    if (ans == value) {
+        document.getElementById("answ").textContent = "A.正解";
+        document.getElementById("info").textContent = `〇 : ${Number(info[2]) + 1} ✕ : ${Number(info[5])}`;
+        return false;
+    } else {
+        document.getElementById("answ").textContent = "A.ハズレ -> " + ans;
+        document.getElementById("info").textContent = `〇 : ${Number(info[2])} ✕ : ${Number(info[5]) + 1}`;
+        return false;
+    }
+}
+
+function setting() {
+    form.innerHTML="<input type=\"text\" id=\"an\" type=\"reset\" placeholder=\"enterまたは、決定ボタンを押してね！\">";
+}
+
+
+		function onTenkey( num ){
+    let numb = document.getElementById("numb");
+    let value = numb.value;
+      if ( num == "RET" ) {
+        abc()
+      } else if ( num == "RE" ) {
+        numb.value = "";
+      } else {
+        let a = value+num;
+        numb.value = a;
+      }
+		}
+</script>
+
+</html>
