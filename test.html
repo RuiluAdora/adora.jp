@@ -26,33 +26,35 @@
   input.tenKey {background-color: #dcffe3;border: 1px solid #5fff6c;font-size:50pt;height:100%;width:100%;}
   td.td1{font-size:	50pt;height:120;width:30%;}
 
-  .num {
-    background-color: #dcffe3;
-    border: 2px solid #5fff6c;
-    width: 25%;
-    height: 50px;
-    text-align: center;
-    font-size: 45px;
-  }
+  .tenkey
+{
+	display: none ;		/* 非表示にする */
+}
 
-  .settings {
-    background-color: #dcffe3;
-    border: 1px solid #5fff6c;
-    text-align: center;
-  }
+/* スマホだけに適用するCSS */
+@media screen and ( max-width:479px )
+{
+	.tenkey
+	{
+		display: block ;		/* 表示にする */
+	}
+}
 
-  .setting-num {
-    background-color: #dcffe3;
-    border: 2px solid #5fff6c;
-    width: 100%;
-    height: 20px;
-    text-align: left;
-    font-size: 15px;
-  }
+@media screen and ( min-width:480px )
+{
+  .num {background-color: #dcffe3;border: 2px solid #5fff6c;width: 25%;height: 50px;text-align: center;font-size: 45px;}
+  .settings {background-color: #dcffe3;border: 1px solid #5fff6c;text-align: center;}
+  .setting-num {background-color: #dcffe3;border: 2px solid #5fff6c;width: 100%;height: 20px;text-align: left;font-size: 15px;}
+  .setting-text {text-align: left;}
+}
 
-  .setting-text {
-    text-align: left;
-  }
+@media screen and ( max-width:479px )
+{
+  .num {background-color: #dcffe3;border: 2px solid #5fff6c;width: 25%;height: 50px;text-align: center;font-size: 45px;}
+  .settings {background-color: #dcffe3;border: 1px solid #5fff6c;text-align: center;}
+  .setting-num {background-color: #dcffe3;border: 2px solid #5fff6c;width: 100%;height: 20px;text-align: left;font-size: 15px;}
+  .setting-text {text-align: left;}
+}
 
 </style>
 
@@ -72,7 +74,7 @@
 
 
 <div>
-  <table width="100%">
+  <table class="tenkey" width="100%" media="(max-width: 400px)">
     <tr>
       <td class="td1"> <input type="button" value="1" class="tenKey" onclick="onTenkey('1')"></td>
       <td class="td1"> <input type="button" value="2" class="tenKey" onclick="onTenkey('2')"></td>
