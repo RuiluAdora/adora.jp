@@ -16,12 +16,11 @@
     float: left;
   }
 
-  .home {text-align: center;background: #dcffe3; font-size: 50px;}
+  .home {text-align: center;background: #dcffe3; font-size: 100px;}
   .home .box-title {font-size: 1.2em;background: #5fff6c;text-align: center;color: #FFF;font-weight: bold;letter-spacing: 0.05em;}
   .home p {padding: 15px 20px;margin: 0;}
 
-  input.example {font-size:50pt;height:120;width:100%;}
-  .tenKey {background-color: #dcffe3;border: 1px solid #5fff6c;font-size:50pt;height:100%;width:100%;}
+  .tenKey {background-color: #dcffe3;border: 1px solid #5fff6c;font-size:100pt;height:100%;width:100%;}
   td.td1{font-size:	50pt;height:120;width:30%;}
   .tenkeys {
    display: flex;
@@ -35,14 +34,14 @@
   }
 
   @media all and (min-width: 1600px) {
-  .num {display: none;}
-  .home {margin: 0em 0;background: #dcffe3; font-size: 50px;}
+  .tenKeys {display: none;}
+  .home {margin: 0em 0;background: #dcffe3; font-size: 200px;}
   }
 
   @media all and (max-width: 1599px) {
   }
 
-  .num {background-color: #dcffe3;border: 2px solid #5fff6c;width: 25%;height: 50px;text-align: center;font-size: 45px;}
+  .num {background-color: #dcffe3;border: #dcffe3;width: 50%;height: 100px;text-align: center;font-size: 90px;}
   .settings {background-color: #dcffe3;border: 1px solid #5fff6c;text-align: center;}
   .setting-num {background-color: #dcffe3;border: 2px solid #5fff6c;width: 100%;height: 20px;text-align: left;font-size: 15px;}
   .setting-text {text-align: left;}
@@ -74,7 +73,7 @@
 
 <!--tenkey-->
 
-<div>
+<div class="tenKeys">
   <table class="tenkeys" width="100%">
     <tr>
       <button class="tenKey" onclick="onTenkey('1')">1</button>
@@ -191,13 +190,12 @@ function setting() {
             keyCode = event.which;
         }
       }
-    document.getElementById("q").textContent = keyCode;
  
     let numb = document.getElementById("numb");
     let value = numb.value;
       if ( keyCode == 13 ) {
         enter()
-      } else if ( keyCode == 8 ) {
+      } else if ( keyCode == 8 || keyCode == 109) {
         numb.value = "";
       } else if ( 48 <= keyCode && keyCode <= 57) {
         let a = value+(Number(keyCode)-48);
