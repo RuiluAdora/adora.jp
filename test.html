@@ -23,7 +23,16 @@
   input.example {font-size:50pt;height:120;width:100%;}
   .tenKey {background-color: #dcffe3;border: 1px solid #5fff6c;font-size:50pt;height:100%;width:100%;}
   td.td1{font-size:	50pt;height:120;width:30%;}
-
+  .tenkeys {
+   display: flex;
+   flex-wrap: wrap;
+   width: 600px;
+  }
+  .tenKey {
+   width: calc(100% / 3);
+   padding: 20px 10px;
+   text-align: center;
+  }
 
   @media all and (min-width: 1600px) {
   .num {display: none;}
@@ -57,26 +66,26 @@
 
 
 <div>
-  <table class="tenkey" width="100%" media="( max-width:750px )">
+  <table class="tenkeys" width="100%">
     <tr>
-      <button type="button" class="tenKey" onclick="onTenkey('1')">1</button>
-      <button type="button" class="tenKey" onclick="onTenkey('2')">2</button>
-      <button type="button" class="tenKey" onclick="onTenkey('3')">3</button>
+      <button class="tenKey" onclick="onTenkey('1')">1</button>
+      <button class="tenKey" onclick="onTenkey('2')">2</button>
+      <button class="tenKey" onclick="onTenkey('3')">3</button>
     </tr>
     <tr>
-      <button type="button" class="tenKey" onclick="onTenkey('4')">4</button>
-      <button type="button" class="tenKey" onclick="onTenkey('5')">5</button>
-      <button type="button" class="tenKey" onclick="onTenkey('6')">6</button>
+      <button class="tenKey" onclick="onTenkey('4')">4</button>
+      <button class="tenKey" onclick="onTenkey('5')">5</button>
+      <button class="tenKey" onclick="onTenkey('6')">6</button>
     </tr>
     <tr>
-      <button type="button" class="tenKey" onclick="onTenkey('7')">7</button>
-      <button type="button" class="tenKey" onclick="onTenkey('8')">8</button>
-      <button type="button" class="tenKey" onclick="onTenkey('9')">9</button>
+      <button class="tenKey" onclick="onTenkey('7')">7</button>
+      <button class="tenKey" onclick="onTenkey('8')">8</button>
+      <button class="tenKey" onclick="onTenkey('9')">9</button>
     </tr>
     <tr>
-      <button type="button" class="tenKey" onclick="onTenkey('RE')">RE</button>
-      <button type="button" class="tenKey" onclick="onTenkey('0')">0</button>
-      <button type="button" class="tenKey" onclick="onTenkey('RET')">GO</button>
+      <button class="tenKey" onclick="onTenkey('RE')">RE</button>
+      <button class="tenKey" onclick="onTenkey('0')">0</button>
+      <button class="tenKey" onclick="onTenkey('RET')">GO</button>
     </tr>
   </table>
 </div>
