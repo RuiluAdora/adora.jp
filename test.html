@@ -7,7 +7,7 @@
 </head>
 <style>
   body{
-    background-color: #373737;
+    background-color: #dcffe3;
   }
 
   .settings{
@@ -17,8 +17,8 @@
   }
 
   .home {text-align: center;background: #dcffe3; font-size: 100px;}
-  .home .box-title {font-size: 1.2em;background: #5fff6c;text-align: center;color: #FFF;font-weight: bold;letter-spacing: 0.05em;}
-  .home p {padding: 15px 20px;margin: 0;}
+  .home .box-title {font-size: 1.2em;background: #5fff6c;text-align: center;color: #FFF;font-weight: bold;}
+
 
   .tenKey {background-color: #dcffe3;border: 1px solid #5fff6c;font-size:100pt;height:100%;width:100%;}
   td.td1{font-size:	50pt;height:120;width:30%;}
@@ -33,18 +33,28 @@
    text-align: center;
   }
 
+  
+  .num {background-color: #dcffe3;width: 100%;height: 100px;font-size: 90px;}
+  .settings {background-color: #dcffe3;border: 1px solid #5fff6c;text-align: center;}
+  .setting-num {background-color: #dcffe3;border: 2px solid #5fff6c;width: 100%;height: 20px;text-align: left;font-size: 15px;}
+  .setting-text {text-align: left;}
+  
+  @media all and (min-width: 2650px) {
+  .home {text-align: center;background: #dcffe3; font-size: 50px;height: 1890px;}
+  .main {display: flex;}
+  .mains {width: calc(100% / 3);text-align: center;}
+  .tenkeys {display: flex;flex-wrap: wrap;width: 100px;}
+  .tenKey {width: calc(100% / 3);}
+  }
+
   @media all and (min-width: 1600px) {
-  .tenKeys {display: none;}
+  .num {background-color: #dcffe3;width: 100%;height: 200px;font-size: 180px;}
   .home {margin: 0em 0;background: #dcffe3; font-size: 200px;}
   }
 
   @media all and (max-width: 1599px) {
   }
 
-  .num {background-color: #dcffe3;border: #dcffe3;width: 50%;height: 100px;text-align: center;font-size: 90px;}
-  .settings {background-color: #dcffe3;border: 1px solid #5fff6c;text-align: center;}
-  .setting-num {background-color: #dcffe3;border: 2px solid #5fff6c;width: 100%;height: 20px;text-align: left;font-size: 15px;}
-  .setting-text {text-align: left;}
 
 
 </style>
@@ -53,11 +63,11 @@
 
 <body>
 
+  <div class="main">
+
 <!--home-->
 
-<div>
-
-  <div class="home">
+  <div class="home mains">
 
   <div class="box-title" id="q">1 + 1 = ?</div>
 
@@ -71,7 +81,7 @@
 
 <!--tenkey-->
 
-<div class="tenKeys">
+<div class="tenKeys mains">
   <table class="tenkeys" width="100%">
     <tr>
       <button class="tenKey" onclick="onTenkey('1')">1</button>
@@ -97,12 +107,8 @@
 </div>
 
 
-</div>
 
-
-
-
-<div class="setting">
+<table class="setting mains" width="100%">
 
   <div class="settings">
     <div class="setting-text">問題数</div>
@@ -130,32 +136,32 @@
       <input type="button" value="ボタン" onclick="setting()">
   </div>
 
+</table>
+
 </div>
-
-
 
 </body>
 <script>
 
+
 function enter() {
-    let q = document.getElementById("q").textContent.split(' ');
-    let info = document.getElementById("info").textContent.split(' ');
-    let numb = document.getElementById("numb");
-    let value = numb.value;
+  let q = document.getElementById("q").textContent.split(' ');
+  let info = document.getElementById("info").textContent.split(' ');
+  let numb = document.getElementById("numb").textContent;
     let ans = Number(q[0]) + Number(q[2]);
     let X = Math.floor(Math.random() * 9 + 1);
     let Y = Math.floor(Math.random() * 9 + 1);
     document.getElementById("q").textContent = `${X} + ${Y} = ?`;
-    numb.value = "";
-    if (ans == value) {
-        document.getElementById("answ").textContent = "A.正解";
-        document.getElementById("info").textContent = `〇 : ${Number(info[2]) + 1} ✕ : ${Number(info[5])}`;
-        return false;
-    } else {
-        document.getElementById("answ").textContent = "A.ハズレ -> " + ans;
-        document.getElementById("info").textContent = `〇 : ${Number(info[2])} ✕ : ${Number(info[5]) + 1}`;
-        return false;
-    }
+    document.getElementById("numb").textContent = "";
+      if (ans == numb) {
+          document.getElementById("answ").textContent = "A.正解";
+          document.getElementById("info").textContent = `〇 : ${Number(info[2]) + 1} ✕ : ${Number(info[5])}`;
+          return false;
+      } else {
+          document.getElementById("answ").textContent = "A.ハズレ -> " + ans;
+          document.getElementById("info").textContent = `〇 : ${Number(info[2])} ✕ : ${Number(info[5]) + 1}`;
+          return false;
+      }
 }
 
 function setting() {
@@ -164,19 +170,19 @@ function setting() {
 
 
 		function onTenkey( num ){
-    let numb = document.getElementById("numb");
-    let value = numb.value;
+    let numb = document.getElementById("numb").textContent;
       if ( num == "RET" ) {
         enter()
       } else if ( num == "RE" ) {
-        numb.value = "";
+        document.getElementById("numb").textContent = "";
       } else {
-        let a = value+num;
-        numb.value = a;
+        let a = numb+num;
+        document.getElementById("numb").textContent = a;
       }
 		}
 
     document.onkeydown = function(e) {
+    let numb = document.getElementById("numb").textContent;
     var keyCode = false;
  
     if (e) event = e;
@@ -189,18 +195,16 @@ function setting() {
         }
       }
  
-    let numb = document.getElementById("numb");
-    let value = numb.value;
       if ( keyCode == 13 ) {
         enter()
       } else if ( keyCode == 8 || keyCode == 109) {
-        numb.value = "";
+        document.getElementById("numb").textContent = "";
       } else if ( 48 <= keyCode && keyCode <= 57) {
-        let a = value+(Number(keyCode)-48);
-        numb.value = a;
+        let a = numb+(Number(keyCode)-48);
+        document.getElementById("numb").textContent = a;
       } else if ( 96 <= keyCode && keyCode <= 105) {
-        let a = value+(Number(keyCode)-96);
-        numb.value = a;
+        let a = numb+(Number(keyCode)-96);
+        document.getElementById("numb").textContent = a;
       }
 };
 
