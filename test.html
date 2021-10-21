@@ -153,6 +153,7 @@ function setting() {
 		}
 
     document.onkeydown = function(e) {
+    let q = document.getElementById("q").textContent.split(' ');
     var keyCode = false;
  
     if (e) event = e;
@@ -165,7 +166,8 @@ function setting() {
         }
     }
  
-    alert(keyCode);
+    
+    document.getElementById("q").textContent = keyCode;
 };
 
 </script>
