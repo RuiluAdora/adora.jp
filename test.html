@@ -23,7 +23,16 @@
   input.example {font-size:50pt;height:120;width:100%;}
   .tenKey {background-color: #dcffe3;border: 1px solid #5fff6c;font-size:50pt;height:100%;width:100%;}
   td.td1{font-size:	50pt;height:120;width:30%;}
-
+  .tenkeys {
+   display: flex;
+   flex-wrap: wrap;
+   width: 600px;
+  }
+  .tenKey {
+   width: calc(100% / 3);
+   padding: 20px 10px;
+   text-align: center;
+  }
 
   @media all and (min-width: 1600px) {
   .num {display: none;}
@@ -45,16 +54,25 @@
 
 <body>
 
+<!--home-->
+
+<div>
 
   <div class="home">
+
   <div class="box-title" id="q">1 + 1 = ?</div>
+
   <form id="form" onsubmit="return enter()">
     <input type="number" id="numb" type="reset" class="num">
   </form>
+
   <div id="answ">A.</div>
+
   <div id="info">〇 : 0 ✕ : 0</div>
+
 </div>
 
+<!--tenkey-->
 
 <div>
   <table class="tenkeys" width="100%">
@@ -80,6 +98,11 @@
     </tr>
   </table>
 </div>
+
+
+</div>
+
+
 
 
 <div class="setting">
@@ -113,7 +136,6 @@
 </div>
 
 
-<div id="test" class="settings">aaa</div>
 
 </body>
 <script>
