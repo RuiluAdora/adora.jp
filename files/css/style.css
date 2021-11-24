@@ -354,28 +354,6 @@
       text-align: center;
     }
   }
-  .addon-title {
-    width: 80%;
-    display: inline-block;
-    font-size: 30px;
-    color: #a54bc9;
-  }
-  .addon-explan {
-    float: none;
-    text-align: left;
-    width: 100%;
-    font-size: 20px;
-    color: rgb(145, 145, 145);
-  }
-  .dl {
-    background-color: lightgreen;
-    color: black;
-    margin: 20px;
-    position: absolute;
-    bottom:0;
-    right:0;
-    border-radius: 1.5rem;
-  }
   
   @media all and (max-width: 750px) {
     .addon {
@@ -408,6 +386,28 @@
       overflow:auto;
       display: none;
       text-align: center;
+    }
+    .addon-title {
+      width: 80%;
+      display: inline-block;
+      font-size: 30px;
+      color: #a54bc9;
+    }
+    .addon-explan {
+      float: none;
+      text-align: left;
+      width: 100%;
+      font-size: 20px;
+      color: rgb(145, 145, 145);
+    }
+    .dl {
+      background-color: lightgreen;
+      color: black;
+      margin: 20px;
+      position: absolute;
+      bottom:0;
+      right:0;
+      border-radius: 1.5rem;
     }
     .top-wrapper h1 {
       font-size: 32px;
