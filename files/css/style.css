@@ -169,13 +169,18 @@
     height:100%;
     text-align: center;
     float: left;
-    width: calc(100% / 4.5);
+    width: calc(100% / 4.3);
     border-radius: 1.5rem;
     box-shadow: rgb(0 0 0 / 13%) 0 6.4px 14.4px 0, rgb(0 0 0 / 11%) 0 1.2px 3.6px 0;
   }
   .addon-icon {
+    max-width: 400px; /* 最大幅 */
+    min-width: 100px; /* 最小幅 */
     text-align: center;
-    position: relative;
+  }
+  .addon-icon img{
+    text-align: center;
+    width: 100%;
   }
   .addon-icon p {
     text-align: center;
@@ -212,7 +217,9 @@
 
 
   .explan {
+    overflow:auto;
     display: none;
+    text-align: center;
   }
   .addon-batubutton {
     transition: .4s;
@@ -243,8 +250,23 @@
     border: 3px solid #de58ff;
     display: block;
   }
-
-
+  .addon-photo {
+    float: left;
+    width: 30%;
+  }
+  .addon-title {
+    width: 80%;
+    display: inline-block;
+    font-size: 60px;
+    color: #a54bc9;
+  }
+  .addon-explan {
+    float: left;
+    text-align: left;
+    width: 60%;
+    font-size: 40px;
+    color: rgb(145, 145, 145);
+  }
   .dl {
     background-color: lightgreen;
     color: black;
@@ -252,6 +274,7 @@
     position: absolute;
     bottom:0;
     right:0;
+    border-radius: 1.5rem;
   }
   /* ----- */
 
@@ -333,6 +356,19 @@
   }
   
   @media all and (max-width: 750px) {
+    .addon {
+      padding: 0.3em 1em;
+      margin: 15px;
+      background-color: #fffbff;
+      border: 5px solid #9211ee;
+      font-size:50px;
+      height:100%;
+      text-align: center;
+      float: none;
+      width: 90%;
+      border-radius: 1.5rem;
+      box-shadow: rgb(0 0 0 / 13%) 0 6.4px 14.4px 0, rgb(0 0 0 / 11%) 0 1.2px 3.6px 0;
+    }
     .top-wrapper h1 {
       font-size: 32px;
     }
