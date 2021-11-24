@@ -217,6 +217,18 @@
 
 
   .explan {
+    padding: 50px;
+    border-radius: 1.5rem;
+    margin: 100px;
+    width: 90%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    color: rgb(0, 0, 0);
+    background-color: #ffeaff;
+    border: 3px solid #de58ff;
     overflow:auto;
     display: none;
     text-align: center;
@@ -236,18 +248,6 @@
     color: rgb(0, 0, 0);
   }
   input[type=checkbox]:checked ~ .explan{
-    padding: 50px;
-    border-radius: 1.5rem;
-    margin: 100px;
-    width: 90%;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    top: 0;
-    left: 0;
-    color: rgb(0, 0, 0);
-    background-color: #ffeaff;
-    border: 3px solid #de58ff;
     display: block;
   }
   .addon-photo {
@@ -349,10 +349,32 @@
   }
 
   
-  @media all and (max-width: 1000px) {
+  @media all and (max-width: 1100px) {
     footer {
       text-align: center;
     }
+  }
+  .addon-title {
+    width: 80%;
+    display: inline-block;
+    font-size: 30px;
+    color: #a54bc9;
+  }
+  .addon-explan {
+    float: none;
+    text-align: left;
+    width: 100%;
+    font-size: 20px;
+    color: rgb(145, 145, 145);
+  }
+  .dl {
+    background-color: lightgreen;
+    color: black;
+    margin: 20px;
+    position: absolute;
+    bottom:0;
+    right:0;
+    border-radius: 1.5rem;
   }
   
   @media all and (max-width: 750px) {
@@ -368,6 +390,24 @@
       width: 90%;
       border-radius: 1.5rem;
       box-shadow: rgb(0 0 0 / 13%) 0 6.4px 14.4px 0, rgb(0 0 0 / 11%) 0 1.2px 3.6px 0;
+    }
+    .explan {
+      padding: 10px;
+      border-radius: 1.5rem;
+      margin: 80px 20px;
+      height: 85%;
+      width: 90%;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      left: 0;
+      color: rgb(0, 0, 0);
+      background-color: #ffeaff;
+      border: 3px solid #de58ff;
+      overflow:auto;
+      display: none;
+      text-align: center;
     }
     .top-wrapper h1 {
       font-size: 32px;
