@@ -1,0 +1,24 @@
+{
+  "caution": "※二次配布・自作発言はやめてください。(中身をみて勉強するのはOK)",
+  "ps": "※ホリデークリエイターの特徴と追加の改造機能をオンにしてください！",
+  "addon": [
+    {
+      "name": "Crafter Support Addon",
+      "explan": "　これは、クラフターを手助けするために作ったアドオンです。<br>ワールド制作時にお使いください。",
+      "function": true,
+      "dataname": [".mcaddon",".png"]
+    },
+    {
+      "name": "一括破壊アドオン",
+      "explan": "　原木類・鉱石類に対応しています！",
+      "function": true,
+      "dataname": [".mcpack",".png"]
+    },
+    {
+      "name": "探検家ツール",
+      "explan": "　新しくなった洞窟をより探索しやすくなる装備や道具を追加します。",
+      "function": true,
+      "dataname": [".mcaddon",".png"]
+    }
+  ]
+}

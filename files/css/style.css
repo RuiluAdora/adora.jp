@@ -1,0 +1,755 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN";
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .container {
+    text-align: center;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  .container a{
+    color: #c5c4c4;
+  }
+  
+  .top-wrapper {
+    padding: 180px 0 100px 0;
+    background-image: url("../image/top2.jpg");
+    background-size: cover;
+    color: rgb(255, 255, 255);  
+    text-shadow:1px 0 0 gray,0 1px 0 gray,-1px 0 0 gray,0 -1px 0 gray;
+    text-align: center;
+    background-position:center;
+    width:100%;
+    height:600px;
+  }
+  
+  .top-wrapper h1 {
+    opacity: 0.7;
+    font-size: 45px;
+    letter-spacing: 5px;
+  }
+  
+  .top-wrapper p {
+    opacity: 0.7;
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .btn-wrapper {
+    text-align: center;
+  }
+  
+  .btn-wrapper p {
+    margin-bottom: 20px;
+  }
+  
+  .signup {
+    background-color: #239b76;
+  }
+  
+  .youtube {
+    background-color: #cd201f;
+    margin-right: 10px;
+  }
+  
+  .twitter {
+    background-color: #55acee;
+  }
+  
+  .btn {
+    padding: 8px 24px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
+  
+  .fa {
+    margin-right: 5px;
+  }
+  
+  
+  .logo {
+    width: 124px;
+    margin-top: 20px;
+  }
+  
+  .header-left {
+    float: left;
+  }
+  
+  .header-right {
+    float: right;
+    margin-right: -25px;
+  }
+  
+  .header-right a {
+    line-height: 65px;
+    padding: 0 25px;
+    color: white;
+    display: block;
+    float: left;
+    transition: all 0.5s;
+  }
+  
+  .header-right a:hover {
+    background-color: rgba(255,255,255,0.3);
+  }
+
+  .lesson-wrapper {
+    height: 100%;
+    padding-bottom: 80px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  
+  .heading {
+    padding-top: 80px;
+    padding-bottom: 50px;
+    color: #5f5d60;
+  }
+  
+  .heading h2 {
+    font-weight: normal;
+  }
+
+  .lessons {
+    text-align: center;
+  }
+  
+  .lesson {
+    float: left;
+    width: 50%;
+  }
+
+
+  
+  /* addon */
+  .addons {
+    height: 100%;
+    background-color: #f7f7f7;
+    text-align: center;
+    border-collapse: separate;
+    width: 100%;
+  }
+  .addon {
+    padding: 0.3em 1em;
+    margin: 15px;
+    background-color: #fffbff;
+    border: 5px solid #9211ee;
+    color: #d262ff;
+    font-size: 2vw;
+    height:100%;
+    text-align: center;
+    float: left;
+    width: calc(100% / 4.5);
+    border-radius: 1.5rem;
+    box-shadow: rgb(0 0 0 / 20%) 0 6.4px 16.4px 0, rgb(0 0 0 / 11%) 0 1.2px 5.6px 0;
+  }
+  .addon:hover {
+    opacity: 0.7;
+    transition: 0.4s;
+  }
+  .addon-icon {
+    max-width: 400px; /* 最大幅 */
+    min-width: 100px; /* 最小幅 */
+    text-align: center;
+  }
+  .addon-icon img{
+    text-align: center;
+    width: 100%;
+  }
+  .addon-icon p {
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    color: white;
+  }
+  .addon-text {
+    width: 100%;
+    display: inline-block;
+    font-size: 30px;
+    color: #ff0000;
+  }
+  .addon-button-explan{
+    display: none;
+  }
+  .explan-button{
+    display: none;
+  }
+  .addon-button:hover {
+    background: #d262ff;
+    color: white;
+  }
+
+
+  .explan {
+    padding: 50px;
+    border-radius: 1.5rem;
+    margin: 100px;
+    width: 90%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    color: rgb(0, 0, 0);
+    background-color: #ffeaff;
+    border: 3px solid #de58ff;
+    overflow:auto;
+    display: none;
+    text-align: center;
+  }
+  .addon-batubutton {
+    font-size: 50px;
+    transition: .4s;
+    color: black;
+    margin: 20px;
+    position: absolute;
+    top:0;
+    right:0;
+  }
+  .addon-batubutton:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  input[type=checkbox]:checked ~ .explan:hover{
+    color: rgb(0, 0, 0);
+  }
+  input[type=checkbox]:checked ~ .explan{
+    display: block;
+  }
+  .addon-photo {
+    float: left;
+    width: 30%;
+    width: 100%;
+  }
+  .addon-title {
+    width: 100%;
+    display: inline-block;
+    font-size: 60px;
+    color: #a54bc9;
+  }
+  .addon-explan {
+    float: left;
+    text-align: left;
+    width: 100%;
+    font-size: 40px;
+    color: rgb(145, 145, 145);
+  }
+  .dl {
+    background-color: lightgreen;
+    color: black;
+    margin: 20px;
+    font-size: 40px;
+    border-radius: 1.5rem;
+    text-align: right;
+    box-shadow: rgb(0 0 0 / 20%) 0 6.4px 16.4px 0, rgb(0 0 0 / 11%) 0 1.2px 5.6px 0;
+  }
+  .dl:hover {
+    background-color: rgb(111, 220, 111);
+    color: rgb(255, 255, 255);
+  }
+  .dl:action {
+    background-color: rgb(221, 84, 255);
+    color: rgb(255, 255, 255);
+  }
+  /* ----- */
+
+
+
+  .lesson-icon {
+    position: relative;
+  }
+  
+  .lesson-icon p {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    color: white;
+  }
+  
+  .text-contents {
+    width: 80%;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #b3aeb5;
+  }
+  
+  .heading h3 {
+    font-weight: normal;
+  }
+  
+  .message-wrapper {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 80px;
+    text-align: center;
+  }
+  
+  .message {
+    padding: 15px 40px;
+    background-color: #5dca88;
+    cursor: pointer;
+    box-shadow: 0px 7px #1a7940;
+  }
+  
+  .message:active {
+    position: relative;
+    top: 7px;
+    box-shadow: none;
+  }
+  
+  footer img {
+    width: 125px;
+  }
+  
+  footer p {
+    color: #b3aeb5;
+    font-size: 12px;
+  }
+  
+  footer {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  
+  .menu-icon {
+    color: white;
+    float: right;
+    font-size: 25px;
+    padding: 21px 0;
+    display: none;
+  }
+
+  
+  .clear {
+    clear: left;
+  }
+
+
+
+
+  .button{
+    display: inline-block;
+    text-decoration: none;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    font-weight: bold;
+    transition: .4s;
+  }
+
+  .pink {
+    color: #ff82fb;
+    border: solid 2px #ff82fb;
+  }
+  .pink:hover {
+    background: #ffc7fd;
+  }
+
+
+
+  .profile-all {
+    height: 100%;
+    height: 740px;
+    padding-bottom: 80px;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: #f7f7f7;
+    text-align: left;
+  }
+  
+  .profile {
+    padding: 10px;
+    border-radius: 1.5rem;
+    background-color: #fff8ff;
+    border: 3px solid #ff82fb;
+    box-shadow: rgb(0 0 0 / 20%) 0 6.4px 16.4px 0, rgb(0 0 0 / 11%) 0 1.2px 5.6px 0;
+    font-size: 30px;
+    height: 700px;
+    width: 68%;
+    float: left;
+    margin-top: 20px;
+  }
+
+  .p-twitter-box{
+    overflow:auto;
+    height: 700px;
+    float: left;
+    box-shadow: rgb(0 0 0 / 20%) 0 6.4px 16.4px 0, rgb(0 0 0 / 11%) 0 1.2px 5.6px 0;
+    margin: 1%;
+    width:30%;
+}
+
+.p-twitter-box .p-twitter-title{
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 2em 0;
+    font-size: 12px;
+}
+.p-twitter-box .twitter-tweet{
+    margin:0 !important;
+}
+.p-twitter-box p{
+    display:none;
+}
+
+.p-twitter-box .p-twitter-pink{
+  background: #f7bcbc;
+}
+
+  
+  @media all and (max-width: 660px) {
+    .top-wrapper {
+      padding: 100px 20px;
+      height:300px;
+    }
+    .youtube {
+      display: none;
+    }
+    .twitter {
+      display: none;
+    }
+    .explan {
+      padding: 10px;
+      border-radius: 1.5rem;
+      margin: 80px 20px;
+      height: 85%;
+      width: 90%;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      left: 0;
+      color: rgb(0, 0, 0);
+      background-color: #ffeaff;
+      border: 3px solid #de58ff;
+      overflow:auto;
+      display: none;
+      text-align: center;
+    }
+    .addon-title {
+      width: 80%;
+      display: inline-block;
+      font-size: 20px;
+      color: #a54bc9;
+    }
+    .dl {
+      font-size: 30px;
+    }
+    .top-wrapper h1 {
+      font-size: 32px;
+    }
+  
+    .heading h2 {
+      font-size: 20px;
+    }
+
+    .profile {
+      height: 100%;
+      font-size: 20px;
+      width: 100%;
+      float: none;
+    }
+    .p-twitter-box{
+      height: 500px;
+      float: none;
+      width:100%;
+  }
+
+  .addon {
+    padding: 0.1em;
+    margin: 7.5px;
+    background-color: #fffbff;
+    border: 5px solid #9211ee;
+    color: #d262ff;
+    font-size: 20px;
+    height:100%;
+    text-align: center;
+    width: auto;
+    border-radius: 1rem;
+    box-shadow: rgb(0 0 0 / 20%) 0 6.4px 16.4px 0, rgb(0 0 0 / 11%) 0 1.2px 5.6px 0;
+  }
+  .addon-icon {
+    float: left;
+    height: 100%;
+    width: 100px;
+    text-align: center;
+  }
+  .addon-icon img{
+    float: left;
+    height: 100%;
+    width: 100px;
+    text-align: center;
+    border-radius: 0.6rem;
+  }
+  .addon-button-explan{
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #797979;
+    color: rgb(145, 145, 145);
+  }
+  .addon-explan {
+    font-size: 17px;
+  }
+  .addon-text {
+    font-size: 18px;
+  }
+  .addon-batubutton {
+    font-size: 18px;
+    transition: .4s;
+    color: black;
+    margin: 20px;
+    position: absolute;
+    top:0;
+    right:0;
+  }
+
+    .text-contents{
+      display: none;
+    }
+
+    .header-right {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+  
+    .twitter {
+      margin-top: 10px;
+    }
+  
+    .top-wrapper {
+      text-align: left;
+    }
+  
+    .top-wrapper h1 {
+      font-size: 24px;
+    }
+  
+    .top-wrapper p {
+      font-size: 14px;
+    }
+  
+    .message-wrapper .btn {
+      width: 100%;
+    }
+
+  }
+
+
+
+
+
+
+
+
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #e6e6e6;
+	letter-spacing : 0.2em;
+}
+header {
+  height: 65px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+	padding: 30px 10px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+h1 {
+	margin: 0; padding: 0;
+	font-size: 20px;
+}
+a {	
+	text-decoration: none;
+	color: #fff;
+}
+nav {
+	margin: 0 0 0 auto;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	display: flex;
+}
+li {
+	margin: 0 0 0 15px;
+	font-size: 14px;
+}
+.main-visual {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: url('main_visual.jpg') top center / cover no-repeat;
+}
+h2 {
+	margin: 0;
+	font-size: 30px;
+	font-weight: normal;
+	color: #fff;
+}
+
+.sp-nav {
+	display: none;
+}
+
+@media screen and (max-width: 660px) {
+	/*ハンバーガーメニュー*/
+	.pc-nav {
+		display: none;
+	}
+	.sp-nav {
+		z-index: 1;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		display: block;
+		width: 100%;
+		background: rgba(0, 0, 0, .8);
+		opacity: 0;
+		transform: translateY(-100%);
+		transition: all .2s ease-in-out;
+	}
+	#hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 0 0 auto;
+	}
+	#hamburger span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: #fff;
+		transform: translateY(-50%);
+	}
+	#hamburger::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #fff;
+	}
+	#hamburger::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 70%;
+		height: 2px;
+		background-color: #fff;
+	}
+	/*スマホメニュー*/
+	.sp-nav ul {
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+	.sp-nav li {
+		margin: 0;
+		padding: 0;
+	}
+	.sp-nav li span {
+		font-size: 15px;
+		color: #fff;
+	}
+	.sp-nav li a, .sp-nav li span {
+		display: block;
+		padding: 20px 0;
+	}
+	/*-閉じるアイコンー*/
+	.sp-nav .close {
+		position: relative;
+		padding-left: 20px;
+	}
+	.sp-nav .close::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 16px;
+		height: 1px;
+		background: #fff;
+		transform: rotate( 45deg );
+	}
+	.sp-nav .close::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 16px;
+		height: 1px;
+		background: #fff;
+		transform: rotate( -45deg );
+	}
+	.toggle {
+		transform: translateY( 0 );
+		opacity: 1;
+	}
+	.main-visual {
+		padding: 0 4%;
+	}
+	h2 {
+		line-height: 1.6;
+		text-align: center;
+	}
+}
